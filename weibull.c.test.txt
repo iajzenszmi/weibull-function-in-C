@@ -1,0 +1,65 @@
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ gcc weibull.c -lm -o weibull
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./weibull
+Enter the values of a and b: 7.0 8.0
+Enter the value of x: 3.0
+The value of the Weibull distribution at x is: -3.811025
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cat weibull.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+// Weibull distribution function
+double weibull(double x, double a, double b) {
+ double gamma = (a * exp(-x / b));
+ return (1.0 - gamma);
+}
+
+int main() {
+ double a, b;
+ double x, y;
+
+ printf("Enter the values of a and b: ");
+ scanf("%lf %lf", &a, &b);
+
+ printf("Enter the value of x: ");
+ scanf("%lf", &x);
+
+ y = weibull(x, a, b);
+ printf("The value of the Weibull distribution at x is: %lf\n", y);
+
+ return 0;
+}
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ sloccount weibull.c
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/weibull.c to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+18      top_dir         ansic=18
+
+
+Totals grouped by language (dominant language first):
+ansic:           18 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 18
+Development Effort Estimate, Person-Years (Person-Months) = 0.00 (0.04)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.06 (0.70)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.05
+Total Estimated Cost to Develop                           = $ 398
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ 
